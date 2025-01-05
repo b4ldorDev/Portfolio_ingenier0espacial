@@ -1,30 +1,33 @@
-import {BookText, Share2,FileAudio, Music, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech } from "lucide-react";
+import {BookText,Share2,FileAudio, Music, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech, Import } from "lucide-react";
+import { Twinkle_Star } from "next/font/google";
+import { FaSoundcloud, FaSpotify, FaInstagram } from "react-icons/fa";
+import { SiYoutubemusic } from "react-icons/si";
 
 export const socialNetworks = [
     {
         id: 1,
         logo: <Youtube size={30} strokeWidth={1} />,
-        src: "#!",
+        src: "https://youtube.com/@bitscraft-o2g?si=Ut5W7DMYo4iXZBOR",
     },
     {
         id: 2,
-        logo: <Linkedin size={30} strokeWidth={1} />,
-        src: "#!",
+        logo: <FaSpotify size={30} strokeWidth={1} />,
+        src: "https://open.spotify.com/artist/4F2qB8AattAcKT4noCIqcd?si=jA5I4DE6Rj2xKTn5JTTORg",
     },
     {
         id: 3,
-        logo: <Twitter size={30} strokeWidth={1} />,
-        src: "#!",
+        logo: <FaSoundcloud  size={30} strokeWidth={1} />,
+        src: "https://on.soundcloud.com/6HVpkskQcFtRcyre8",
     },
     {
         id: 4,
-        logo: <Rss size={30} strokeWidth={1} />,
-        src: "#!",
+        logo: <FaInstagram size={30} strokeWidth={1} />,
+        src: "https://www.instagram.com/ingenier0espacial/",
     },
     {
         id: 5,
-        logo: <Twitch size={30} strokeWidth={1} />,
-        src: "#!",
+        logo: <SiYoutubemusic size={30} strokeWidth={1} />,
+        src: "https://music.youtube.com/playlist?list=OLAK5uy_n9LubyMvmY81MMNlxXRNRQgoQJvCrKy88&si=ho0obFKlNUWAg9ji",
     },
 ];
 
