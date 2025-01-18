@@ -2,14 +2,36 @@
 module.exports = {
     content: [
         "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+<<<<<<< HEAD
+        "./page/**/*.{js,ts,jsx,tsx,mdx}",
+=======
+>>>>>>> 04028b0b (update links and animations)
         "./components/**/*.{js,ts,jsx,tsx,mdx}",
         "./app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
+<<<<<<< HEAD
+        screens:{
+            mobile:'280px',
+        },
+
+        extend: {
+            colors: {
+                secondary: "#8f9044",
+                darkBg: "#fc8020",
+                modGreen: "#8F9044",
+                modGreen2: "#a0a14c",
+                modYellow: "#FAFAD2",
+                modOrange: "#FC8020",
+                modRed: "#CF1500",
+                modBlack: "#352F3D"
+        
+=======
         extend: {
             colors: {
                 secundary: "#352f3d",
                 darkBg: "#fc8020"
+>>>>>>> 04028b0b (update links and animations)
             },
             backgroundImage: {
                 "gradient-cover":

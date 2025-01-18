@@ -4,6 +4,16 @@ import { socialNetworks } from "@/data";
 
 const Header = () => {
     return (
+<<<<<<< HEAD
+        <MotionTransition position="bottom" className="absolute z-40 inline-block w-full top-5 md:top-10 px-10">
+            <header className="flex justify-center items-center"> 
+                <div className="container justify-between max-w-6xl mx-auto md:flex  items-center"> 
+                    <Link href="/">
+                        <h1 className="my-3 text-4xl font-bold text-center md:text-left text-modYellow">
+                            Victor Manuel Canchola
+                            <span className="text-modOrange">
+                                {' '}🌱
+=======
         <MotionTransition position="bottom" className="absolute z-40 inline-block w-full top-5 md:top-10">
             <header className="flex justify-center items-center"> {/* Añadido flex y centrado */}
                 <div className="container justify-between max-w-6xl mx-auto md:flex  items-center"> {/* Añadido centrado */}
@@ -11,7 +21,12 @@ const Header = () => {
                         <h1 className="my-3 text-4xl font-bold text-center md:text-left">
                             Victor Manuel Canchola
                             <span className="bg-secondary-100">
+<<<<<<< HEAD
                                 Músico🌱
+>>>>>>> 04028b0b (update links and animations)
+=======
+                                🌱
+>>>>>>> f2327763 (spotify terminado y actualización de soundcloud)
                             </span>
                         </h1>
                     </Link>

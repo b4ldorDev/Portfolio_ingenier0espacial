@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import {Share2,FileAudio, Music, HomeIcon, UserRound, Youtube, Crop, Pencil, Computer, Book, Rocket} from "lucide-react";
+=======
 import {BookText,Share2,FileAudio, Music, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech, Import } from "lucide-react";
+>>>>>>> 04028b0b (update links and animations)
 import { Twinkle_Star } from "next/font/google";
 import { FaSoundcloud, FaSpotify, FaInstagram } from "react-icons/fa";
 import { SiYoutubemusic } from "react-icons/si";
@@ -39,11 +43,53 @@ export const itemsNavbar = [
         icon: <HomeIcon size={25} color="#fff" strokeWidth={1} />,
         link: "/",
     },
+<<<<<<< HEAD
+    /*
+=======
     {
+>>>>>>> 04028b0b (update links and animations)
         id: 2,
         title: "User",
         icon: <UserRound size={25} color="#fff" strokeWidth={1} />,
         link: "/about-me",
+<<<<<<< HEAD
+    */
+    {
+        id: 3,
+        title: "Portfolio",
+        icon: <FileAudio size={25} color="#fff" strokeWidth={1} />,
+        link: "/musicPortfolio",
+    },
+    {   
+        id: 4,
+        title: "Band",
+        icon: <Music size={25} color="#fff" strokeWidth={1} />,
+        link: "/band",
+    },
+    /*{
+        id: 5,
+        title: "Networks",
+        icon: <Share2 size={25} color="#fff" strokeWidth={1} />,
+        link: "/networks",
+    }*/
+];
+
+
+export const ExampleLol = [
+    {
+        id: 1,
+        name: "No sé xd",
+        description:
+            "",
+        imageUrl: "",
+    },
+    {
+    
+        id: 6,
+        name: "No sé xd",
+        description:"",
+        imageUrl: "",
+=======
     },
     {
         id: 3,
@@ -256,5 +302,6 @@ export const dataTestimonials = [
         description:
             "¡Fantástico recurso para aquellos que buscan validación antes de tomar decisiones importantes! Los testimonios aquí son veraces y realmente útiles. ¡Gracias por simplificar mi proceso de toma de decisiones!",
         imageUrl: "/profile6.png",
+>>>>>>> 04028b0b (update links and animations)
     },
 ];

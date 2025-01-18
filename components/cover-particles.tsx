@@ -48,8 +48,13 @@ export const CoverParticles =() =>{
                         quantity: 4,
                     },
                     repulse: {
+<<<<<<< HEAD
+                        distance: 300,
+                        duration: 0.2,
+=======
                         distance: 200,
                         duration: 0.4,
+>>>>>>> 04028b0b (update links and animations)
                     },
                 },
             },
@@ -71,7 +76,11 @@ export const CoverParticles =() =>{
                         default: "bounce",
                     },
                     random: false,
+<<<<<<< HEAD
+                    speed: 2,
+=======
                     speed: 3,
+>>>>>>> 04028b0b (update links and animations)
                     straight: false,
                 },
                 number: {
