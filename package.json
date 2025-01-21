@@ -1,5 +1,5 @@
 {
-  "homepage": "https://b4ldordev.github.io/Portfolio_ingenier0espacial",
+  "homepage": "https://b4ldordev.github.io/Portfolio_ingenier0espacial"
   "name": "landing-particles",
   "version": "0.1.0",
   "private": true,
@@ -9,7 +9,7 @@
     "start": "node index.js",
     "lint": "next lint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d out",
     "test": "jest"
   },
   "dependencies": {
