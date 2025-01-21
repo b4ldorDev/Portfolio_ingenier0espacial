@@ -1,5 +1,4 @@
 "use client"
-import ContainerPage from "@/components/containerPage";
 import TransitionPage from "@/components/transition-pages";
 import SpotifyPlayer from "@/components/spotify-player";
 import { CoverParticles } from "@/components/cover-particles";
@@ -8,6 +7,7 @@ import { TypeAnimation } from "react-type-animation";
 const Juliette = () => {
   return (
     <div className="z-10 w-full">
+	  <TransitionPage/>
       <CoverParticles/>
       <div className="flex flex-col md:flex-row justify-center items-center min-h-screen">
         <div className="w-full p-4">

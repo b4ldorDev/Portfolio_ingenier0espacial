@@ -2,8 +2,7 @@
 import { CoverParticles } from '@/components/cover-particles'; 
 import  TransitionPage  from '@/components/transition-pages';
 import MusicPlayer from '@/components/music-player';
-import { url } from 'inspector';
-import { title } from 'process';
+
 
 export default function musicPortfolio() {
     const playlist = [

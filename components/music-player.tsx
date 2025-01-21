@@ -1,7 +1,14 @@
 "use client";
-
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { Play, Pause, SkipForward, SkipBack, Volume2, List } from 'lucide-react';
+
+interface Widget {
+  pause: () => void;
+  play: () => void;
+  load: (url: string, options: { auto_play: boolean }) => void;
+  setVolume: (volume: number) => void;
+  bind: (event: string, callback: () => void) => void;
+}
 
 interface Track {
   url: string;
@@ -17,10 +24,29 @@ const MusicPlayer = ({ playlist }: MusicPlayerProps) => {
   const iframeRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
-  const [widget, setWidget] = useState(null);
+  const [widget, setWidget] = useState<Widget | null>(null);
   const [volume, setVolume] = useState(50);
   const [showPlaylist, setShowPlaylist] = useState(false);
+  const [iframeHeight, setIframeHeight] = useState(166);
 
+  useEffect(() => {
+    const updateHeight = () => {
+      setIframeHeight(window.innerWidth < 640 ? 120 : 166);
+    };
+    
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
+
+  const handleNext = useCallback(() => {
+    if (currentTrackIndex < playlist.length - 1) {
+      setCurrentTrackIndex(prev => prev + 1);
+      widget?.load(playlist[currentTrackIndex + 1].url, { auto_play: true });
+    }
+  }, [currentTrackIndex, playlist, widget]);
+	
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://w.soundcloud.com/player/api.js";
@@ -28,7 +54,7 @@ const MusicPlayer = ({ playlist }: MusicPlayerProps) => {
     document.body.appendChild(script);
 
     script.onload = () => {
-      // @ts-ignore - SC no está tipado
+      // @ts-expect-error: SC no está tipado
       const SC = window.SC;
       if (SC) {
         const playerWidget = SC.Widget(iframeRef.current);
@@ -53,9 +79,11 @@ const MusicPlayer = ({ playlist }: MusicPlayerProps) => {
     };
 
     return () => {
-      document.body.removeChild(script);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
     };
-  }, []);
+  }, [handleNext, volume]);
 
   const handlePlayPause = () => {
     if (widget) {
@@ -64,13 +92,6 @@ const MusicPlayer = ({ playlist }: MusicPlayerProps) => {
       } else {
         widget.play();
       }
-    }
-  };
-
-  const handleNext = () => {
-    if (currentTrackIndex < playlist.length - 1) {
-      setCurrentTrackIndex(prev => prev + 1);
-      widget?.load(playlist[currentTrackIndex + 1].url, { auto_play: true });
     }
   };
 
@@ -101,7 +122,7 @@ const MusicPlayer = ({ playlist }: MusicPlayerProps) => {
         <iframe
           ref={iframeRef}
           width="100%"
-          height={window.innerWidth < 640 ? 120 : 166} // Altura reducida para móvil
+          height={iframeHeight}
           scrolling="no"
           frameBorder="no"
           src={`https://w.soundcloud.com/player/?url=${playlist[currentTrackIndex].url}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`}
@@ -194,4 +215,4 @@ const MusicPlayer = ({ playlist }: MusicPlayerProps) => {
   );
 };
 
-export default MusicPlayer; 
+export default MusicPlayer;
