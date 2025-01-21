@@ -2,15 +2,11 @@
 module.exports = {
     content: [
         "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-<<<<<<< HEAD
         "./page/**/*.{js,ts,jsx,tsx,mdx}",
-=======
->>>>>>> 04028b0b (update links and animations)
         "./components/**/*.{js,ts,jsx,tsx,mdx}",
         "./app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
-<<<<<<< HEAD
         screens:{
             mobile:'280px',
         },
@@ -26,12 +22,6 @@ module.exports = {
                 modRed: "#CF1500",
                 modBlack: "#352F3D"
         
-=======
-        extend: {
-            colors: {
-                secundary: "#352f3d",
-                darkBg: "#fc8020"
->>>>>>> 04028b0b (update links and animations)
             },
             backgroundImage: {
                 "gradient-cover":
@@ -40,7 +30,7 @@ module.exports = {
             animation: {
                 'fade-in': 'fadeIn 1s ease-in-out',
                 'slide-in': 'slideIn 1s ease-in-out',
-                // Agrega aquí las animaciones que necesites
+                
             },
             keyframes: {
                 fadeIn: {
@@ -51,7 +41,7 @@ module.exports = {
                     '0%': { transform: 'translateX(-100%)' },
                     '100%': { transform: 'translateX(0)' }
                 }
-                // Agrega aquí los keyframes que necesites
+               
             }
         },
     },

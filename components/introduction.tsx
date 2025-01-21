@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 "use client"
 
 import Image from "next/image";
@@ -21,8 +20,6 @@ const Introduction = () => {
       bgColor: "bg-modGreen" 
     }
   ];
-
-
   
   return (
     <section className="min-h-screen w-full flex items-center justify-center py-12 px-4">
@@ -85,23 +82,4 @@ const Introduction = () => {
     </section>
   );
 };
-=======
-import Image from "next/image";
-import { TypeAnimation } from "react-type-animation";
-
-const Introduction = () => {
-    return (
-        <div className="z-20 w-full bg-darkBg/60">
-            <div className="z-20 grid items-center h-full p-6 py-20 md:py-0 md:grid-cols-2">
-                <Image src="/principal-4.jpeg" priority width="800" height="800" alt="Profile pic"/>
-                
-                <div className="flex flex-col justify-center max-w-md">
-        <h1 className="mb-5 text-2xl"> ALGO DE  MUSICA </h1>
-                </div>
-            </div>
-        </div>
-    );
-}
->>>>>>> f2327763 (spotify terminado y actualización de soundcloud)
-
 export default Introduction;
