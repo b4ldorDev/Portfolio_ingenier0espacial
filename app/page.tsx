@@ -14,8 +14,6 @@ export default function Home() {
         <Introduction />
         <h1></h1>
         <span></span>
-      {/*  <p className="text-3xl font-bold animate-fade-in">Introducción </p>       */} 
-      {/*  <p className="text-lg animate-slide-in">Productor musical y compositor originario de Querétaro. Especializado en la creación y producción de música para medios audiovisuales. Fundador de la banda "Juliette!", donde fusiona elementos del rock alternativo con influencias del rock japonés</p>*/}
       </div>
     </main>
   );

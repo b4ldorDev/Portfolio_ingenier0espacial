@@ -32,7 +32,7 @@ const Introduction = () => {
               height={500}
               alt="Profile pic"
               className="w-full h-auto object-contain"
-              priority
+            
             />
           </div>
 
