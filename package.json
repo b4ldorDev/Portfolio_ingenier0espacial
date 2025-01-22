@@ -9,7 +9,7 @@
     "start": "node index.js",
     "lint": "next lint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d out",
+    "deploy": "gh-pages -d build",
     "test": "jest"
   },
   "dependencies": {
