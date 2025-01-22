@@ -1,10 +1,7 @@
-// next.config.ts
-import { NextConfig } from 'next';
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  basePath: '/Portfolio_ingenier0espacial',
-  assetPrefix: '/Portfolio_ingenier0espacial/',
-  reactStrictMode: true, 
+  /* config options here */
 };
 
 export default nextConfig;
