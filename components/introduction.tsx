@@ -41,11 +41,11 @@ const Introduction = () => {
               Composición y producción musical para medios audiovisuales
             </h1>
 
-            <h2 className="text-xl md:text-3xl font-bold text-gray-200 text-center md:text-left">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-200 text-center md:text-left">
               Puedo hacer:
             </h2>
 
-            <div className="text-xl md:text-3xl text-center md:text-left w-full">
+            <div className="text-xl md:text-2xl text-center md:text-left w-full">
               <TypeAnimation
                 sequence={[
                   "Arreglos",
@@ -64,12 +64,12 @@ const Introduction = () => {
               />
             </div>
 
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
               {navigationLinks.map((link, index) => (
                 <Link
                   key={index}
                   href={link.href}
-                  className={`px-4 py-2 ${link.bgColor} text-modYellow border-2 rounded-xl 
+                  className={`px-3 py-2 ${link.bgColor} text-modYellow border-2 rounded-xl 
                     text-sm md:text-base transition-all hover:shadow-xl hover:scale-105`}
                 >
                   {link.text}
