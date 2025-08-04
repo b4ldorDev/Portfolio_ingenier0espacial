@@ -1,10 +1,18 @@
 "use client"
 
 import React from 'react';
+import Image from "next/image";
+
+interface SnowflakeProps {
+  delay: number;
+  duration: number;
+  left: number;
+  size: number;
+}
 
 const PixelArtSnowLanding = () => {
   // Componente para los copos de nieve
-  const Snowflake = ({ delay, duration, left, size }) => {
+  const Snowflake: React.FC<SnowflakeProps> = ({ delay, duration, left, size }) => {
     const keyframes = `
       @keyframes snowfall-${delay.toString().replace('.', '')} {
         0% {
@@ -28,7 +36,7 @@ const PixelArtSnowLanding = () => {
       <>
         <style dangerouslySetInnerHTML={{ __html: keyframes }} />
         <div
-          className={`absolute bg-white rounded-full opacity-80`}
+          className="absolute bg-white rounded-full opacity-80"
           style={{
             width: `${size}px`,
             height: `${size}px`,
@@ -110,9 +118,11 @@ const PixelArtSnowLanding = () => {
           
           {/* Marco de la imagen */}
           <div className="relative bg-white bg-opacity-90 rounded-2xl p-6 shadow-2xl border-4 border-slate-200 backdrop-blur-sm">
-            <img
+            <Image
               src="https://i.imgur.com/AetOc8Y.jpeg"
               alt="Profile"
+              width={400}
+              height={400}
               className="w-80 h-80 md:w-96 md:h-96 object-cover rounded-xl"
             />
           </div>
