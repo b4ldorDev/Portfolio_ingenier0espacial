@@ -3,7 +3,7 @@
 import React from 'react';
 
 const PixelArtSnowLanding = () => {
-  // Componente para los copos de nieve
+
   const Snowflake = ({ delay, duration, left }) => (
     <div
       className="absolute w-1 h-1 bg-white rounded-full opacity-80 animate-pulse"
