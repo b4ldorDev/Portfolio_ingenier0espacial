@@ -1,85 +1,112 @@
-"use client"
+import React from 'react';
 
-import Image from "next/image";
-import { TypeAnimation } from "react-type-animation";
-import Link from "next/link";
+const PixelArtSnowLanding = () => {
+  // Componente para los copos de nieve
+  const Snowflake = ({ delay, duration, left }) => (
+    <div
+      className="absolute w-1 h-1 bg-white rounded-full opacity-80"
+      style={{
+        left: `${left}%`,
+        animation: `snowfall ${duration}s linear infinite`,
+        animationDelay: `${delay}s`
+      }}
+    />
+  );
 
-const Introduction = () => {
+  // Generar copos de nieve aleatorios
+  const snowflakes = Array.from({ length: 50 }, (_, i) => ({
+    id: i,
+    delay: Math.random() * 10,
+    duration: 3 + Math.random() * 4,
+    left: Math.random() * 100
+  }));
 
-  const  contact_number = "5432423432";
-  const  message = "Hola, me gustaría tener más información de tu trabajo"
-  const  encodedMessage = encodeURIComponent(message);
-  const  whatsappURL = `https://wa.me/${contact_number}?text=${encodedMessage}`;
-  
-  const navigationLinks = [
-    { href: "https://on.soundcloud.com/6HVpkskQcFtRcyre8", text: "Portafolio", bgColor: "bg-modGreen" },
-    { href: whatsappURL, text: "Contacto", bgColor: "bg-modOrange" },
-    { 
-      href: "https://open.spotify.com/artist/4F2qB8AattAcKT4noCIqcd?si=oAZvxBTmSnypQqFs_bx_Wg", 
-      text: "Mi banda", 
-      bgColor: "bg-modGreen" 
-    }
-  ];
-  
   return (
-    <section className="min-h-screen w-full flex items-center justify-center py-12 px-4">
-      <div className="max-w-6xl w-full mx-auto">
-        <div className="grid md:grid-cols-2 gap-8 items-center justify-items-center">
-          <div className="w-full max-w-md flex justify-center">
-            <Image
-              src="/avatar_profile.png"
-              width={500}
-              height={500}
-              alt="Profile pic"
-              className="w-full h-auto object-contain"
-            
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Estilos CSS para el fondo pixel art y animación de nieve */}
+      <style jsx>{`
+        @keyframes snowfall {
+          0% {
+            transform: translateY(-100vh) rotate(0deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(100vh) rotate(360deg);
+            opacity: 0;
+          }
+        }
+        
+        .pixel-bg {
+          background-image: 
+            radial-gradient(circle at 25% 25%, #e0f2fe 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, #b3e5fc 0%, transparent 50%),
+            radial-gradient(circle at 50% 50%, #81d4fa 0%, transparent 50%);
+          background-size: 60px 60px, 40px 40px, 80px 80px;
+          background-position: 0 0, 20px 20px, 40px 40px;
+          image-rendering: pixelated;
+          image-rendering: -moz-crisp-edges;
+          image-rendering: crisp-edges;
+        }
+        
+        .pixel-gradient {
+          background: linear-gradient(135deg, 
+            #f8fafc 0%, 
+            #e2e8f0 25%, 
+            #cbd5e1 50%, 
+            #94a3b8 75%, 
+            #64748b 100%);
+          background-size: 20px 20px;
+          image-rendering: pixelated;
+        }
+      `}</style>
+
+      {/* Fondo pixel art */}
+      <div className="absolute inset-0 pixel-gradient"></div>
+      <div className="absolute inset-0 pixel-bg opacity-60"></div>
+      
+      {/* Copos de nieve */}
+      <div className="absolute inset-0 pointer-events-none">
+        {snowflakes.map((flake) => (
+          <Snowflake
+            key={flake.id}
+            delay={flake.delay}
+            duration={flake.duration}
+            left={flake.left}
+          />
+        ))}
+      </div>
+
+      {/* Imagen centrada */}
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="relative">
+          {/* Efecto de resplandor pixel */}
+          <div className="absolute inset-0 bg-white rounded-2xl blur-xl opacity-20 scale-110"></div>
+          
+          {/* Contenedor de la imagen */}
+          <div className="relative bg-white bg-opacity-90 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border-4 border-slate-200">
+            <img
+              src="https://i.imgur.com/jsDq0OP.jpg"
+              alt="Profile"
+              className="w-80 h-80 md:w-96 md:h-96 object-cover rounded-xl"
+              style={{ imageRendering: 'auto' }}
             />
-          </div>
-
-          <div className="flex flex-col items-center md:items-start space-y-6 w-full max-w-md">
-            <h1 className="text-xl md:text-5xl font-bold text-modYellow text-center md:text-left">
-              Composición y producción musical para medios audiovisuales
-            </h1>
-
-            <h2 className="text-xl md:text-2xl font-bold text-gray-200 text-center md:text-left">
-              Puedo hacer:
-            </h2>
-
-            <div className="text-xl md:text-2xl text-center md:text-left w-full">
-              <TypeAnimation
-                sequence={[
-                  "Arreglos",
-                  1000,
-                  "Producción musical",
-                  1000,
-                  "Foleys",
-                  1000,
-                  "Diseño Sonoro",
-                  1000
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-                className="block font-bold text-modYellow"
-              />
-            </div>
-
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
-              {navigationLinks.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.href}
-                  className={`px-3 py-2 ${link.bgColor} text-modYellow border-2 rounded-xl 
-                    text-sm md:text-base transition-all hover:shadow-xl hover:scale-105`}
-                >
-                  {link.text}
-                </Link>
-              ))}
-            </div>
           </div>
         </div>
       </div>
-    </section>
+
+      {/* Elementos decorativos pixel art */}
+      <div className="absolute top-10 left-10 w-8 h-8 bg-blue-200 opacity-60" style={{ imageRendering: 'pixelated' }}></div>
+      <div className="absolute bottom-20 right-20 w-6 h-6 bg-slate-300 opacity-60" style={{ imageRendering: 'pixelated' }}></div>
+      <div className="absolute top-1/3 right-10 w-4 h-4 bg-indigo-200 opacity-60" style={{ imageRendering: 'pixelated' }}></div>
+      <div className="absolute bottom-1/3 left-20 w-5 h-5 bg-blue-100 opacity-60" style={{ imageRendering: 'pixelated' }}></div>
+    </div>
   );
 };
-export default Introduction;
+
+export default PixelArtSnowLanding;
